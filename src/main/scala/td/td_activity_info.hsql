@@ -1,0 +1,15 @@
+--活动维度信息表
+
+USE waimai;
+DROP TABLE IF EXISTS td_activity_info;
+
+CREATE TABLE td_activity_info(
+act_type_id  int comment '活动类型id',
+act_type_name string comment '活动类型名称',
+act_id int comment '活动id',
+act_name string comment '活动名称'
+)
+ROW FORMAT DELIMITED  FIELDS TERMINATED BY ','
+STORED AS textfile;
+
+LOAD DATA INPATH '/waimai/data/act_info.csv' OVERWRITE INTO TABLE td_activity_info;

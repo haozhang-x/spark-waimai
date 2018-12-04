@@ -1,0 +1,14 @@
+--订单状态维表
+USE waimai;
+DROP TABLE IF EXISTS td_order_status_info;
+
+
+CREATE TABLE td_order_status_info(
+status int comment '订单状态id',
+status_name string comment '订单状态名称'
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+STORED AS textfile;
+
+LOAD DATA INPATH '/waimai/data/order_status.tsv' overwrite  INTO TABLE td_order_status_info;
+

@@ -1,0 +1,14 @@
+--活动信息维表
+
+USE waimai;
+DROP TABLE IF EXISTS td_date_info;
+
+CREATE TABLE td_date_info(
+day_id string comment '月',
+week_id string comment '周',
+month_id string comment '月'
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+STORED AS textfile;
+
+LOAD DATA INPATH  '/waimai/data/date_info.txt' OVERWRITE  INTO TABLE td_date_info;
