@@ -113,8 +113,8 @@ object ta_poi_info_d {
     //设置hive的相关参数
     spark.sqlContext.setConf("hive.exec.dynamic.partition", "true")
     spark.sqlContext.setConf("hive.exec.dynamic.partition.mode", "nonstrict")
-    spark.sqlContext.setConf("hvie.exec.max.dynamic.partitions", "10000")
-    spark.sqlContext.setConf("hvie.exec.max.dynamic.partitions.pernoden", "1000")
+    spark.sqlContext.setConf("hive.exec.max.dynamic.partitions", "10000")
+    spark.sqlContext.setConf("hive.exec.max.dynamic.partitions.pernoden", "1000")
     //保存数据到目标表中
 
     sql(
